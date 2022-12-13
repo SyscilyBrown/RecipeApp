@@ -15,7 +15,8 @@ CURR_USER_KEY = "curr_user"
 app = Flask(__name__)
 """testing git"""
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///recipeapp_db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///recipeapp_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://eccwayhtoudysw:604ca819180f650a711b6887824127b46b183e65046d675592eb039a931be902@ec2-52-201-124-168.compute-1.amazonaws.com:5432/d57ieskiq15l47'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False 
 app.config['SECRET_KEY'] = API_SECRET_KEY
