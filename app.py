@@ -30,7 +30,7 @@ migrate = Migrate(app,db)
 from models import db, connect_db, User, FavoriteRecipe, FoundRecipe
 connect_db(app)
 #db.create_all()
-with app.app_context():
+#with app.app_context():
     db.create_all()
 
 
