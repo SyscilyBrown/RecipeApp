@@ -7,7 +7,7 @@ from sqlalchemy.exc import IntegrityError, PendingRollbackError
 from secretkeys import API_SECRET_KEY
 import requests
 from forms import RecipeByIngredients, RecipeByNutrients, UserForm
-from models import db, connect_db, User, FavoriteRecipe, FoundRecipe
+#from models import db, connect_db, User, FavoriteRecipe, FoundRecipe
 import json
 from flask_migrate import Migrate
 
@@ -16,8 +16,8 @@ CURR_USER_KEY = "curr_user"
 app = Flask(__name__)
 """testing git"""
 
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///recipeapp_db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://eccwayhtoudysw:604ca819180f650a711b6887824127b46b183e65046d675592eb039a931be902@ec2-52-201-124-168.compute-1.amazonaws.com:5432/d57ieskiq15l47'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///recipeapp_db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://eccwayhtoudysw:604ca819180f650a711b6887824127b46b183e65046d675592eb039a931be902@ec2-52-201-124-168.compute-1.amazonaws.com:5432/d57ieskiq15l47'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = False 
 app.config['SECRET_KEY'] = API_SECRET_KEY
@@ -26,6 +26,7 @@ debug = DebugToolbarExtension(app)
 
 db= SQLAlchemy(app)
 migrate = Migrate(app,db)
+from models import db, connect_db, User, FavoriteRecipe, FoundRecipe
 #connect_db(app)
 #db.create_all()
 
