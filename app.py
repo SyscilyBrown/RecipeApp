@@ -26,6 +26,7 @@ debug = DebugToolbarExtension(app)
 db= SQLAlchemy(app)
 connect_db(app)
 db.create_all()
+db.session.commit()
 
 
 
