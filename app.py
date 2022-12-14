@@ -9,6 +9,7 @@ import requests
 from forms import RecipeByIngredients, RecipeByNutrients, UserForm
 from models import db, connect_db, User, FavoriteRecipe, FoundRecipe
 import json
+from flask_migrate import Migrate
 
 CURR_USER_KEY = "curr_user"
 
@@ -24,9 +25,10 @@ app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 debug = DebugToolbarExtension(app)
 
 db= SQLAlchemy(app)
-connect_db(app)
-db.create_all()
-db.session.commit()
+migrate = Migrate(app,db)
+#connect_db(app)
+#db.create_all()
+
 
 
 
